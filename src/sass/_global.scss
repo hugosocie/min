@@ -1,0 +1,22 @@
+// ==========================================================================
+// Global styles
+// ==========================================================================
+
+body, html {
+    font-family: $base-ff;
+    font-size: $base-fs;
+}
+
+
+
+// For development purpose
+pre {
+    font-family: monospace;
+    font-size: $base-fs;
+    line-height: 1em;
+    background: #eee;
+    padding: 1em 2em;
+    margin-bottom: 2px;
+
+    &.nav { background: #ddd; }
+}
