@@ -1,6 +1,6 @@
 # Min
 
-Starter theme
+Starter
 
 ## Install
 

@@ -6,7 +6,7 @@ module.exports = {
         return {}
     },
 
-    mixins : [ ajax ],
+    mixins : [],
 
     computed : {},
 
