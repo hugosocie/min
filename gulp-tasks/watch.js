@@ -2,29 +2,25 @@
 // Watch task
 // ==========================================================================
 
-var Data    = require( './_data' ),
-    Helpers = require( './_helpers' ),
-    Config  = require( '../gulp-config' );
+const Data = require( './_data' );
+const Helpers = require( './_helpers' );
+const Config = require( '../gulp-config' );
 
-module.exports = function( gulp, plugins, paths, files ) {
+module.exports = function ( gulp, plugins, paths, files ) {
+  Helpers.pushToWatch( files.html, plugins.browserSync.reload );
 
-    Helpers.pushToWatch( files.html, plugins.browserSync.reload );
+  return function () {
+    plugins.browserSync.init( {
+      port: Config.port,
+      open: Config.openBrowser,
+      server: {
+        baseDir: './',
+      },
+    } );
 
-    return function(){
-
-        plugins.browserSync.init({
-            port: Config.port,
-            open: Config.openBrowser,
-            server: {
-                baseDir: "./"
-            }
-        });
-
-        for( var w = 0; w < Data.watch.length; w++ ) {
-            var tsk = Data.watch[ w ];
-            gulp.watch( tsk.path, tsk.script );
-        }
-
-    };
-
+    for ( let w = 0; w < Data.watch.length; w++ ) {
+      const tsk = Data.watch[w];
+      gulp.watch( tsk.path, tsk.script );
+    }
+  };
 };

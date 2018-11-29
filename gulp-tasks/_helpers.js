@@ -3,23 +3,21 @@
 // Import all Javascript dependencies from bower_components
 // ==========================================================================
 
-var Data = require( './_data' );
+const Data = require( './_data' );
 
-module.exports = function() {
+module.exports = ( function () {
+  return {
 
-    return {
+    pushToWatch( path, script ) {
+      Data.watch.push( {
+        path,
+        script,
+      } );
+    },
 
-        pushToWatch : function( path, script ) {
-            Data.watch.push({
-                path : path,
-                script : script
-            });
-        },
+    pushToClean( path ) {
+      Data.clean.push( path );
+    },
 
-        pushToClean : function( path ) {
-            Data.clean.push( path );
-        }
-
-    };
-
-}();
+  };
+}() );

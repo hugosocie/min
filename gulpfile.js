@@ -2,10 +2,12 @@
 // Import main depdendencies
 // ==========================================================================
 
-var gulp            = require( 'gulp' ),
-    gulpLoadPlugins = require( 'gulp-load-plugins' );
+const gulp = require( 'gulp' );
 
-var Config = require( './gulp-config' );
+
+const gulpLoadPlugins = require( 'gulp-load-plugins' );
+
+const Config = require( './gulp-config' );
 
 
 //
@@ -14,32 +16,30 @@ var Config = require( './gulp-config' );
 // that are not prefixed with "gulp-" or "gulp."
 // ==========================================================================
 
-var plugins = gulpLoadPlugins({
-    pattern: [
-        'gulp-*', 'gulp.*',
-        'webpack-stream',
-        'browser-sync',
-        'main-bower-files',
-        'del'
-    ]
-});
-
+const plugins = gulpLoadPlugins( {
+  pattern: [
+    'gulp-*', 'gulp.*',
+    'webpack-stream',
+    'browser-sync',
+    'main-bower-files',
+    'del',
+  ],
+} );
 
 
 //
 // Define files path and files extensions
 // ==========================================================================
 
-var files = {
-    fonts   : [ Config.paths.src + '/fonts/**/*.{eot,svg,ttf,woff,woff2}' ],
-    html    : [ '**/*.html' ],
-    php     : [ '{lib,templates}/**/*.php', '*.php' ],
-    images  : [ Config.paths.src + '/img/**/*.{jpg,png,gif,svg}' ],
-    scripts : [ Config.paths.src + '/js/**/*.{js,vue}' ],
-    styles  : [ Config.paths.src + '/sass/**/*.scss' ],
-    svg     : [ Config.paths.src + '/svg/**/*.svg' ]
+const files = {
+  fonts: [ `${Config.paths.src}/fonts/**/*.{eot,svg,ttf,woff,woff2}` ],
+  html: [ '**/*.html' ],
+  php: [ '{lib,templates}/**/*.php', '*.php' ],
+  images: [ `${Config.paths.src}/img/**/*.{jpg,png,gif,svg}` ],
+  scripts: [ `${Config.paths.src}/js/**/*.{js,vue}` ],
+  styles: [ `${Config.paths.src}/sass/**/*.scss` ],
+  svg: [ `${Config.paths.src}/svg/**/*.svg` ],
 };
-
 
 
 //
@@ -47,56 +47,49 @@ var files = {
 // Tasks name must be the same that the task file name in "gulp-tasks" folder
 // ==========================================================================
 
-var tasks = [
+const tasks = [
 
-    // Main tasks
-    [
-        //'bower',
-        'fonts',
-        'images',
-        'scripts',
-        'styles',
-        'svg'
-    ],
-    [ 'watch' ],
+  // Main tasks
+  [
+    // 'bower',
+    'fonts',
+    'images',
+    'scripts',
+    'styles',
+    'svg',
+  ],
+  [ 'watch' ],
 
-    // other tasks
-    [ 'clean' ]
+  // other tasks
+  [ 'clean' ],
 ];
-
 
 
 //
 // Load tasks
 // ==========================================================================
 
-var loadTasks = function() {
-    for( var t = 0; t < tasks.length; t++ ) {
-        var _tasks = tasks[ t ];
-        for( var i = 0; i < _tasks.length; i++ ) {
-            var name = _tasks[ i ],
-                path = './gulp-tasks/' + name;
-            gulp.task( name, require( path )( gulp, plugins, Config.paths, files ) );
-        }
+const loadTasks = ( function () {
+  for ( let t = 0; t < tasks.length; t++ ) {
+    const _tasks = tasks[t];
+    for ( let i = 0; i < _tasks.length; i++ ) {
+      const name = _tasks[i];
+      const path = `./gulp-tasks/${name}`;
+      gulp.task( name, require( path )( gulp, plugins, Config.paths, files ) );
     }
-}();
-
+  }
+}() );
 
 
 //
 // Build task
 // ==========================================================================
 
-gulp.task( 'build', function( e ){
-    return plugins.sequence( tasks[ 0 ], e );
-});
-
+gulp.task( 'build', e => plugins.sequence( tasks[0], e ) );
 
 
 //
 // Default task : watch
 // ==========================================================================
 
-gulp.task( 'default', function( e ){
-    return plugins.sequence( 'build', tasks[ 1 ], e );
-});
+gulp.task( 'default', e => plugins.sequence( 'build', tasks[1], e ) );

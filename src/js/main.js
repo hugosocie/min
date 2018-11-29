@@ -1,4 +1,4 @@
-var Vue    = require( 'vue' );
+const Vue = require( 'vue' );
 
 
 // Register Directives
@@ -13,29 +13,26 @@ Vue.directive( 'load', require( './directives/v-load.js' ) );
 Vue.component( 'example', require( './components/example.js' ) );
 
 
-
 // Main Vue App
 // ==========================================================================
-new Vue({
+Vue( {
 
-    el: '#app',
+  el: '#app',
 
-    name : 'App',
+  name: 'App',
 
-    data : {},
+  data: {},
 
-    watch : {},
+  watch: {},
 
-    mixins : [],
+  mixins: [],
 
-    created : function(){
-        console.log( 'Vue.js created' );
-    },
+  created() {},
 
-    mounted : function(){},
+  mounted() {},
 
-    methods : {},
+  methods: {},
 
-    components : {}
+  components: {},
 
-});
+} );

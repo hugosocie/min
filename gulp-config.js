@@ -4,15 +4,15 @@
 
 module.exports = {
 
-    proxy : 'http://minji.local',
-    port : 1337,
-    openBrowser : false,
+  proxy: 'http://minji.local',
+  port: 1337,
+  openBrowser: false,
 
-    env : 'development',
+  env: 'development',
 
-    paths : {
-        dist : 'dist',
-        src  : 'src'
-    }
+  paths: {
+    dist: 'dist',
+    src: 'src',
+  },
 
 };

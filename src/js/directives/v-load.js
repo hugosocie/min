@@ -1,23 +1,22 @@
 module.exports = {
 
-    bind : function( el, binding, vnode ){
+  bind( el, binding, vnode ) {
+    this.handler = function ( e ) {
+      e.preventDefault();
+      const url = el.href || binding.value;
 
-        this.handler = function( e ){
-            e.preventDefault();
-            var url = el.href || binding.value;
+      if ( typeof vnode.context.loadContent === 'function' ) {
+        vnode.context.loadContent( url, vnode.context.$options.methods );
+      } else {
+        document.location = url;
+      }
+    };
 
-            if( typeof vnode.context.loadContent === 'function' ){
-                vnode.context.loadContent( url, vnode.context.$options.methods );
-            } else {
-                document.location = url;
-            }
-        }.bind( this );
+    el.addEventListener( 'click', this.handler );
+  },
 
-        el.addEventListener( 'click', this.handler );
-    },
+  unbind( el ) {
+    el.removeEventListener( 'click', this.handler );
+  },
 
-    unbind : function( el ){
-        el.removeEventListener( 'click', this.handler );
-    }
-
-}
+};

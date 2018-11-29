@@ -1,31 +1,31 @@
 module.exports = {
 
-    name : 'Example',
+  name: 'Example',
 
-    data : function(){
-        return {}
-    },
+  data() {
+    return {};
+  },
 
-    mixins : [],
+  mixins: [],
 
-    computed : {},
+  computed: {},
 
-    props : [],
+  props: [],
 
-    watch : {},
+  watch: {},
 
-    created : function(){},
+  created() {},
 
-    destroyed : function(){
-        console.log( 'Component ' + this.$options.name + ' destroyed' );
-    },
+  destroyed() {
+    console.log( `Component ${this.$options.name} destroyed` );
+  },
 
-    mounted : function(){
-        this.$nextTick( function(){
-            console.log( 'Component ' + this.$options.name + ' mounted' );
-        });
-    },
+  mounted() {
+    this.$nextTick( () => {
+      console.log( `Component ${this.$options.name} mounted` );
+    } );
+  },
 
-    methods : {}
+  methods: {},
 
-}
+};

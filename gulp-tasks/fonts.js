@@ -2,15 +2,13 @@
 // Fonts task
 // ==========================================================================
 
-var Helpers = require( './_helpers' );
+const Helpers = require( './_helpers' );
 
-module.exports = function( gulp, plugins, paths, files ) {
+module.exports = function ( gulp, plugins, paths, files ) {
+  Helpers.pushToWatch( files.fonts, [ 'fonts', plugins.browserSync.reload ] );
 
-    Helpers.pushToWatch( files.fonts,  [ 'fonts', plugins.browserSync.reload ] );
-
-    return function(){
-        gulp.src( files.fonts )
-            .pipe( gulp.dest( paths.dist + '/fonts/' ) );
-    };
-
+  return function () {
+    gulp.src( files.fonts )
+      .pipe( gulp.dest( `${paths.dist}/fonts/` ) );
+  };
 };

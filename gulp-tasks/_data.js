@@ -5,8 +5,8 @@
 
 module.exports = {
 
-    watch : [],
+  watch: [],
 
-    clean : []
+  clean: [],
 
 };
