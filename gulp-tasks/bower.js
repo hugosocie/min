@@ -6,13 +6,13 @@
 
 const Config = require( '../gulp-config' );
 
-module.exports = function ( gulp, plugins, paths ) {
+module.exports = function( gulp, plugins, paths ) {
   const src = plugins.mainBowerFiles( {
     includeDev: true,
     env: Config.env,
   } );
 
-  return function () {
+  return function() {
     gulp.src( src )
       .pipe( plugins.filter( '**/*.js' ) )
       .pipe( plugins.concat( 'libs.js' ) )

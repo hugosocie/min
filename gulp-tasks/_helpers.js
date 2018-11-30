@@ -5,7 +5,7 @@
 
 const Data = require( './_data' );
 
-module.exports = ( function () {
+module.exports = ( function() {
   return {
 
     pushToWatch( path, script ) {

@@ -5,7 +5,7 @@
 const Helpers = require( './_helpers' );
 const Config = require( '../gulp-config' );
 
-module.exports = function ( gulp, plugins, paths, files ) {
+module.exports = function( gulp, plugins, paths, files ) {
   const includePaths = [
     require( 'node-reset-scss' ).includePath,
   ];
@@ -13,7 +13,7 @@ module.exports = function ( gulp, plugins, paths, files ) {
   Helpers.pushToWatch( files.styles, [ 'styles' ] );
   Helpers.pushToClean( `${paths.src}/sass/_build` );
 
-  return function () {
+  return function() {
     gulp.src( [ `${paths.src}/sass/main.scss`, `${paths.src}/sass/editor-style.scss` ] )
       .pipe( plugins.plumber() )
       .pipe( plugins.sassBulkImport() )

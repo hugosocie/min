@@ -3,10 +3,7 @@
 // ==========================================================================
 
 const gulp = require( 'gulp' );
-
-
 const gulpLoadPlugins = require( 'gulp-load-plugins' );
-
 const Config = require( './gulp-config' );
 
 
@@ -69,7 +66,7 @@ const tasks = [
 // Load tasks
 // ==========================================================================
 
-const loadTasks = ( function () {
+const loadTasks = ( function() {
   for ( let t = 0; t < tasks.length; t++ ) {
     const _tasks = tasks[t];
     for ( let i = 0; i < _tasks.length; i++ ) {

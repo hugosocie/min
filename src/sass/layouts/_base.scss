@@ -6,11 +6,6 @@ body,
 html {
   font-family: $base-ff;
   font-size: $base-fs;
-  background: rgba( #000, .2 );
-
-  a[ name='foo' ] {
-    color: red;
-  }
 }
 
 

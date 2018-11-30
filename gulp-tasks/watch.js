@@ -6,10 +6,10 @@ const Data = require( './_data' );
 const Helpers = require( './_helpers' );
 const Config = require( '../gulp-config' );
 
-module.exports = function ( gulp, plugins, paths, files ) {
+module.exports = function( gulp, plugins, paths, files ) {
   Helpers.pushToWatch( files.html, plugins.browserSync.reload );
 
-  return function () {
+  return function() {
     plugins.browserSync.init( {
       port: Config.port,
       open: Config.openBrowser,

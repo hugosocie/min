@@ -5,10 +5,10 @@
 const Data = require( './_data' );
 const Helpers = require( './_helpers' );
 
-module.exports = function ( gulp, plugins, paths ) {
+module.exports = function( gulp, plugins, paths ) {
   Helpers.pushToClean( paths.dist );
 
-  return function () {
+  return function() {
     plugins.del( Data.clean );
   };
 };

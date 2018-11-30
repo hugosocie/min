@@ -1,7 +1,7 @@
 module.exports = {
 
   bind( el, binding, vnode ) {
-    this.handler = function ( e ) {
+    this.handler = function( e ) {
       e.preventDefault();
       const url = el.href || binding.value;
 

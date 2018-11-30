@@ -5,10 +5,10 @@
 const Helpers = require( './_helpers' );
 const Config = require( '../gulp-config' );
 
-module.exports = function ( gulp, plugins, paths, files ) {
+module.exports = function( gulp, plugins, paths, files ) {
   const src = `./${paths.src}/js/main.js`;
 
-  return function () {
+  return function() {
     gulp.src( src )
       .pipe( plugins.plumber() )
       .pipe( plugins.webpackStream( {

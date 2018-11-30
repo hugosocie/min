@@ -4,7 +4,11 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/.bin/eslint ./src/js",
+    "stylelint": "./node_modules/.bin/stylelint ./src/sass",
+    "lint": "npm run eslint && npm run stylelint",
+    "lint:fix": "npm run eslint -- --fix && npm run stylelint -- --fix"
   },
   "author": "hugosocie",
   "license": "ISC",
@@ -51,7 +55,6 @@
     "npm": "3.6.0"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
     "axios": "^0.18.0",
     "vue": "^2.1.9"
   }

@@ -7,6 +7,8 @@ module.exports = {
     "object-curly-spacing": ["error", "always"],
     "space-in-parens": ["error", "always"],
     "array-bracket-spacing": ["error", "always"],
-    "no-console": "warn"
+    "no-console": "warn",
+    "func-names": ["warn", "never"],
+    "space-before-function-paren": ["warn", "never"]
   }
 };
