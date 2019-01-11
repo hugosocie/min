@@ -1,7 +1,7 @@
 const devMode = process.env.NODE_ENV !== 'production'
 
 const path = require( 'path' )
-const webpack = require( 'webpack' );
+const webpack = require( 'webpack' )
 
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
 const HtmlWebPackPlugin = require( 'html-webpack-plugin' )

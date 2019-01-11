@@ -1,43 +1,43 @@
 //
-// Import Global dependencies
+// Import dependencies
 // ==========================================================================
 
-import Vue from 'vue'
-import style from 'STYLES/main.scss'
+import Vue from 'vue';
+import 'STYLES/main.scss';
+
+import VueRouter from 'vue-router';
+import Routes from 'ROOT/routes';
+
+import Vuex from 'vuex';
+import Store from 'ROOT/store';
 
 
 //
 // Create Router
 // ==========================================================================
 
-import VueRouter from 'vue-router'
-import routes from 'ROOT/routes.js'
+Vue.use( VueRouter );
 
-Vue.use( VueRouter )
-
-const router = new VueRouter({
+const router = new VueRouter( {
   mode: 'history',
-  routes: routes
-})
+  Routes,
+} );
 
 
 //
 // Create Store
 // ==========================================================================
 
-import Vuex from 'vuex'
-import Store from 'ROOT/store.js'
-
-Vue.use( Vuex )
+Vue.use( Vuex );
 
 const store = new Vuex.Store( Store );
 
 
-// 
+//
 // Create & Mount App
 // ==========================================================================
 
-const app = new Vue( {
+new Vue( {
   router,
-  store
-} ).$mount( '#app' )
+  store,
+} ).$mount( '#app' );

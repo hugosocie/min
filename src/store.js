@@ -6,14 +6,12 @@ export default {
 
   mutations: {
     increment( state ) {
-      state.count++
+      state.count++;
     },
   },
 
   getters: {
-    getCount: state => {
-      return state.count
-    }
-  }
+    getCount: state => state.count,
+  },
 
-}
+};

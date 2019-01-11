@@ -1,20 +1,20 @@
 <template>
   <div class="test">
-    
+
     <main-nav />
     Test.vue
-  
+
   </div>
 </template>
 
 <script>
-  import MainNav from 'COMPONENTS/mainNav.vue'
+import MainNav from 'COMPONENTS/mainNav.vue';
 
-  export default {
-    components: {
-      MainNav
-    }
-  }
+export default {
+  components: {
+    MainNav,
+  },
+};
 </script>
 
 <style>

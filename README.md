@@ -16,6 +16,10 @@ Vue.js starter App
 ## Lint
 
   $ npm run eslint
+  $ npm run eslint:fix
+  
   $ npm run stylelint
+  $ npm run stylelint:fix
+  
   $ npm run lint
   $ npm run lint:fix
