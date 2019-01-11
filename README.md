@@ -1,28 +1,21 @@
 # Min
 
-Starter
+Vue.js starter App
 
 ## Install
 
   $ npm install
 
 
-## Config and Environment
+## Run
 
-Edit `gulp-config.js`
+  $ npm run dev
+  $ npm run build
 
 
-## Gulp Tasks
+## Lint
 
-  $ gulp
-  $ gulp build
-  $ gulp clean
-
-  $ gulp bower
-  $ gulp fonts
-  $ gulp iconfont
-  $ gulp images
-  $ gulp svg
-  $ gulp scripts
-  $ gulp styles
-  $ gulp watch
+  $ npm run eslint
+  $ npm run stylelint
+  $ npm run lint
+  $ npm run lint:fix

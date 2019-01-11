@@ -9,21 +9,20 @@
 // Dependencies
 // ==========================================================================
 
-@import 'reset';   // Eric Meyer's reset css
+@import 'reset-css';   // Eric Meyer's reset css
 
 
 
 //
-// Internals dependencies
+// Settings & Utils
 // ==========================================================================
 
-@import 'utils/settings';
+@import '_settings';
 
 
 
 //
-// Others stuffs
-// Import all files begining with '_'; 
+// Internal Dependencies
 // ==========================================================================
 
-@import './**/_*';
+@import '_layout'
