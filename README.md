@@ -2,24 +2,38 @@
 
 Vue.js starter App
 
+
 ## Install
 
-  $ npm install
+```console
+npm install
+```
 
 
 ## Run
 
-  $ npm run dev
-  $ npm run build
+```console
+npm run dev
+npm run build
+```
 
 
 ## Lint
 
-  $ npm run eslint
-  $ npm run eslint:fix
-  
-  $ npm run stylelint
-  $ npm run stylelint:fix
-  
-  $ npm run lint
-  $ npm run lint:fix
+Lint .js & .vue files
+```console
+npm run eslint
+npm run eslint:fix
+```
+
+Lint .css, .scss, .sass & .vue files
+```console
+npm run stylelint
+npm run stylelint:fix
+```
+
+Do both
+```console
+npm run lint
+npm run lint:fix
+```
