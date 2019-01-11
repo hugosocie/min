@@ -64,7 +64,17 @@ module.exports = {
           'postcss-loader',
           'sass-loader',
         ],
-      }
+      },
+      {
+        test: /\.(jpg|png|gif)$/i,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 60 * 1024,
+            name: 'assets/[name].[ext]'
+          }
+        }]
+      },
     ]
   },
 
@@ -72,6 +82,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       'ROOT': path.resolve( __dirname, 'src' ),
+      'ASSETS': path.resolve( __dirname, 'src/assets' ),
       'STYLES': path.resolve( __dirname, 'src/styles' ),
       'COMPONENTS': path.resolve( __dirname, 'src/components' ),
       'PAGES': path.resolve( __dirname, 'src/pages' ),
