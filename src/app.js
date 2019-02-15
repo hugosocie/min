@@ -3,13 +3,13 @@
 // ==========================================================================
 
 import Vue from 'vue';
-import 'STYLES/main.scss';
+import '@styles/main.scss';
 
 import VueRouter from 'vue-router';
-import Routes from 'ROOT/routes';
+import Routes from '@root/routes';
 
 import Vuex from 'vuex';
-import Store from 'ROOT/store';
+import Store from '@root/store';
 
 
 //

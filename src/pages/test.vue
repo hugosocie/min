@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import MainNav from 'COMPONENTS/mainNav.vue';
+import MainNav from '@components/mainNav.vue';
 
-const img = require( 'ASSETS/doudouinspace-notext.jpg' );
+const img = require( '@assets/doudouinspace-notext.jpg' );
 
 export default {
   components: {
@@ -26,9 +26,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   .test {
     background: purple;
-    background-image: url( '~ASSETS/doudouinspace-notext.jpg' )
+    background-image: url( '~@assets/doudouinspace-notext.jpg' )
   }
 </style>

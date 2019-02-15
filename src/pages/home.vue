@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MainNav from 'COMPONENTS/mainNav.vue';
+import MainNav from '@components/mainNav.vue';
 import { mapGetters } from 'vuex';
 
 let interval = null;
