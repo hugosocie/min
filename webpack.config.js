@@ -1,13 +1,13 @@
-const devMode = process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV !== 'production';
 
-const path = require( 'path' )
-const webpack = require( 'webpack' )
+const path = require( 'path' );
+const webpack = require( 'webpack' );
 
-const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
-const HtmlWebPackPlugin = require( 'html-webpack-plugin' )
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
-const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' )
-const OptimizeCSSAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' )
+const VueLoaderPlugin = require( 'vue-loader/lib/plugin' );
+const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
+const OptimizeCSSAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
 
 
 module.exports = {
@@ -15,9 +15,9 @@ module.exports = {
   entry: {
     app: './src/app.js',
   },
-  
+
   output: {
-    path:  path.resolve( __dirname, 'dist' ),
+    path: path.resolve( __dirname, 'dist' ),
     filename: '[name].js',
     publicPath: '/',
   },
@@ -38,14 +38,14 @@ module.exports = {
         exclude: /node_modules/,
         use: [ {
           loader: 'html-loader',
-          options: { minimize: true }
-        } ]
+          options: { minimize: true },
+        } ],
       },
       {
         test: /\.vue$/,
         exclude: /node_modules/,
         use: {
-          loader: 'vue-loader'
+          loader: 'vue-loader',
         },
       },
       {
@@ -67,47 +67,47 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|gif)$/i,
-        use: [{
+        use: [ {
           loader: 'url-loader',
           options: {
             limit: 60 * 1024,
-            name: 'assets/[name].[ext]'
-          }
-        }]
+            name: 'assets/[name].[ext]',
+          },
+        } ],
       },
-    ]
+    ],
   },
 
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.esm.js',
       '@root': path.resolve( __dirname, 'src' ),
       '@assets': path.resolve( __dirname, 'src/assets' ),
       '@styles': path.resolve( __dirname, 'src/styles' ),
       '@components': path.resolve( __dirname, 'src/components' ),
       '@pages': path.resolve( __dirname, 'src/pages' ),
-    }
+    },
   },
 
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new UglifyJsPlugin( {
         cache: true,
         parallel: true,
-        sourceMap: true // set to true if you want JS source maps
-      }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+        sourceMap: true, // set to true if you want JS source maps
+      } ),
+      new OptimizeCSSAssetsPlugin( {} ),
+    ],
   },
 
   plugins: [
     new VueLoaderPlugin(),
-    new HtmlWebPackPlugin({
+    new HtmlWebPackPlugin( {
       template: './src/index.html',
-    }),
-    new MiniCssExtractPlugin({
+    } ),
+    new MiniCssExtractPlugin( {
       template: './src/styles/[name].css',
-    }),
+    } ),
     new webpack.HotModuleReplacementPlugin(),
-  ]
-}
+  ],
+};

@@ -4,7 +4,7 @@
     <main-nav />
     Test.vue
 
-    <img :src="img" />
+    <img :src="img">
 
   </div>
 </template>
@@ -12,17 +12,20 @@
 <script>
 import MainNav from '@components/mainNav.vue';
 
-const img = require( '@assets/doudouinspace-notext.jpg' );
+const IMG = require( '@assets/doudouinspace-notext.jpg' );
 
 export default {
+
   components: {
     MainNav,
   },
-  data(){
+
+  data() {
     return {
-      img: img
-    }
-  }
+      img: IMG,
+    };
+  },
+
 };
 </script>
 
